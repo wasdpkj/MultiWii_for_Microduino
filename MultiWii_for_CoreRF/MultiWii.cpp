@@ -488,10 +488,8 @@ void annexCode() { // this code is excetuted at each loop and won't interfere wi
     }
   }
 
-  //pkj
   // #if !(defined(SPEKTRUM))  //Only one serial port on ProMini.  Skip serial com if Spektrum Sat in use. Note: Spek code will auto-call serialCom if GUI data detected on serial0.
   serialCom();
-  //RF_data();
   // #endif
 
 #if defined(POWERMETER)
@@ -784,9 +782,6 @@ void loop () {
   static uint32_t timestamp_fixated = 0;
   int16_t rc;
   int32_t prop = 0;
-
-  //pkj!!!
-  //RF_data();
 
   if (currentTime > rcTime ) { // 50Hz
     rcTime = currentTime + 20000;
