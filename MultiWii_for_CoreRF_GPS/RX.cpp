@@ -77,9 +77,9 @@ boolean sta = false;
 boolean error = false;
 
 /*
-[head,2byte,0xAA 0xBB] [type,1byte,0xCC] [data,16byte] [body,1byte(from getChecksum())]
+[head,2byte,0xAA 0xBB] [type,1byte,0xC8] [data,16byte] [body,1byte(from getChecksum())]
  Example:
- AA BB CC 1A 01 1A 01 1A 01 2A 01 3A 01 4A 01 5A 01 6A 01 0D **
+ AA BB C8 1A 01 1A 01 1A 01 2A 01 3A 01 4A 01 5A 01 6A 01 0D **
  */
 void RF_data()
 {
@@ -92,7 +92,7 @@ void RF_data()
     //step.2
     if (sta) {
       sta = false;
-      error = boolean(inChar != 0xCC);
+      error = boolean(inChar != 0xC8);
       num = 0;
     }
 
