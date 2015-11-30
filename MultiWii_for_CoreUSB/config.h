@@ -60,11 +60,11 @@
     //#define MINTHROTTLE 1120 // for Super Simple ESCs 10A
     //#define MINTHROTTLE 1064 // special ESC (simonk)
     //#define MINTHROTTLE 1050 // for brushed ESCs like ladybird
-    #define MINTHROTTLE 1000 // (*) (**)
+    #define MINTHROTTLE 1050 // (*) (**)
 
   /****************************    Motor maxthrottle    *******************************/
     /* this is the maximum value for the ESCs at full power, this value can be increased up to 2000 */
-    #define MAXTHROTTLE 1850
+    #define MAXTHROTTLE 2000
 
   /****************************    Mincommand          *******************************/
     /* this is the value for the ESCs when they are not armed
@@ -1045,7 +1045,7 @@ Also note, that maqgnetic declination changes with time, so recheck your value e
   /**************************************************************************************/
     /* motors will not spin when the throttle command is in low position
        this is an alternative method to stop immediately the motors */
-    //#define MOTOR_STOP
+    #define MOTOR_STOP
 
     /* some radios have not a neutral point centered on 1500. can be changed here */
     #define MIDRC 1500
