@@ -728,7 +728,7 @@
        vbat = [0;1023]*16/VBATSCALE
        must be associated with #define BUZZER ! */
     #define VBAT              // uncomment this line to activate the vbat code
-    #define MCU_VOLTAGE     34  //[3.3v : 33],[5.0v : 50]
+    #define MCU_VOLTAGE     33  //[3.3v : 33],[5.0v : 50]
 
     #define VBATSCALE       131*50/MCU_VOLTAGE // (*) (**) change this value if readed Battery voltage is different than real voltage
 
