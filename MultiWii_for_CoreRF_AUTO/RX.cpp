@@ -72,16 +72,17 @@ void read_data(int _num, byte* _buf) {
   else if (type == 0xC9) {
     //pkj
     if (_bufin[0] < 1100) {
-      for (int a = 0; a < 200; a++) {
         types_Sta = 1;
         types_Code = 1;
-      }
     }
-    else if (_bufin[1] < 1100)
-      for (int a = 0; a < 200; a++) {
+    else if (_bufin[1] < 1100){
         types_Sta = 1;
         types_Code = 2;
-      }
+    }
+    else{
+        types_Sta = 0;
+        types_Code = 0;      
+    }
   }
 }
 

@@ -8,6 +8,7 @@ MultiWiiCopter by Alexandre Dubus
  any later version. see <http://www.gnu.org/licenses/>
  */
 
+#include <ZigduinoRadio.h>
 #include <avr/io.h>
 
 #include "Arduino.h"

@@ -1,4 +1,3 @@
-#include <ZigduinoRadio.h>
 
 /*
  * Welcome to MultiWii.
