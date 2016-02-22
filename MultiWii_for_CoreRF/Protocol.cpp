@@ -536,14 +536,17 @@ void evaluateCommand() {
      break;
    case MSP_ACC_CALIBRATION:
      if(!f.ARMED) calibratingA=512;
+     //pkj
      headSerialReply(0);
      break;
    case MSP_MAG_CALIBRATION:
      if(!f.ARMED) f.CALIBRATE_MAG = 1;
+     //pkj
      headSerialReply(0);
      break;
    case MSP_EEPROM_WRITE:
      writeParams(0);
+     //pkj
      headSerialReply(0);
      break;
    case MSP_DEBUG:

@@ -393,6 +393,7 @@ void ACC_Common() {
     for (uint8_t axis = 0; axis < 3; axis++) {
       // Reset a[axis] at start of calibration
       if (calibratingA == 512) a[axis]=0;
+      //pkj
       // Sum up 512 readings
       a[axis] +=imu.accADC[axis];
       // Clear global variables for next reading

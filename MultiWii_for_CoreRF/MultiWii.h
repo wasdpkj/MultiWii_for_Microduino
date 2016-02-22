@@ -85,6 +85,10 @@ extern int16_t servo[8];
 extern int16_t failsafeEvents;
 extern volatile int16_t failsafeCnt;
 
+extern uint8_t types_Code;
+extern uint8_t types_Sta;
+extern unsigned long types_Time;
+
 extern int16_t rcData[RC_CHANS];
 extern int16_t rcSerial[8];
 extern int16_t rcCommand[4];

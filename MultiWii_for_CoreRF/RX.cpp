@@ -40,8 +40,8 @@ void rxInt(void);
 /**************************************************************************************/
 /***************                   Core RF Setup                   ********************/
 /**************************************************************************************/
-byte getChecksum(byte length, byte cmd, byte mydata[])
-{
+uint8_t type;
+byte getChecksum(byte length, byte cmd, byte mydata[]) {
   //三个参数分别为： 数据长度  ，  指令代码  ，  实际数据数组
   byte checksum = 0;
   checksum ^= (length & 0xFF);
@@ -66,7 +66,24 @@ void read_data(int _num, byte* _buf) {
   _num /= 2;
   int16_t _bufin[_num];
   for (int i = 0; i < _num; i++)  _bufin[i] = read16(_buf);
-  for (int a = 0; a < _num; a++)  rcValue[a] = _bufin[a];
+  if (type == 0xC8) {
+    for (int a = 0; a < _num; a++)  rcValue[a] = _bufin[a];
+  }
+  else if (type == 0xC9) {
+    //pkj
+    if (_bufin[0] < 1100) {
+        types_Sta = 1;
+        types_Code = 1;
+    }
+    else if (_bufin[1] < 1100){
+        types_Sta = 1;
+        types_Code = 2;
+    }
+    else{
+        types_Sta = 0;
+        types_Code = 0;      
+    }
+  }
 }
 
 byte inChar, inCache;
@@ -81,8 +98,7 @@ boolean error = false;
   Example:
   AA BB C8 1A 01 1A 01 1A 01 2A 01 3A 01 4A 01 5A 01 6A 01 0D **
 */
-void RF_data()
-{
+void RF_data() {
   while (RF.available()) {
     inCache = inChar;
     inChar = RF.read();
@@ -92,7 +108,8 @@ void RF_data()
     //step.2
     if (sta) {
       sta = false;
-      error = boolean(inChar != 0xC8);
+      error = boolean(inChar != 0xC8 && inChar != 0xC9);
+      type = !error ? inChar : 0;
       num = 0;
     }
 
@@ -104,7 +121,7 @@ void RF_data()
     if (num  == (16 + 1)) {
       inCache = buffer[16];
       buffer[16] = NULL;
-      inChar = getChecksum(16, 200, buffer);
+      inChar = getChecksum(16, type, buffer);
       if (!error && inCache == inChar) {
         read_data(16, buffer);
         RF.beginTransmission();

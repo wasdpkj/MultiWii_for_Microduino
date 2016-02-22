@@ -8,6 +8,7 @@ MultiWiiCopter by Alexandre Dubus
  any later version. see <http://www.gnu.org/licenses/>
  */
 
+#include <ZigduinoRadio.h>
 #include <avr/io.h>
 
 #include "Arduino.h"
@@ -258,6 +259,10 @@ uint8_t telemetryStepIndex = 0;
 
 int16_t failsafeEvents = 0;
 volatile int16_t failsafeCnt = 0;
+
+uint8_t types_Code = 0;
+uint8_t types_Sta = 0;
+unsigned long types_Time = 0;
 
 int16_t rcData[RC_CHANS];    // interval [1000;2000]
 int16_t rcSerial[8];         // interval [1000;2000] - is rcData coming from MSP
@@ -694,6 +699,21 @@ void setup() {
 #endif
 
   debugmsg_append_str("initialization completed\n");
+
+  calibratingA = 512;
+
+  conf.activate[BOXANGLE]=0B111;
+//    rcOptions[BOXANGLE]=1;
+//  rcOptions[BOXANGLE]=1;
+//  // bumpless transfer to Level mode
+//  if (!f.ANGLE_MODE) {
+//      f.ANGLE_MODE = 1;
+//  } 
+//  else {
+//    // failsafe support
+//    f.ANGLE_MODE = 0;
+//  }  
+
 }
 
 void go_arm() {
@@ -949,6 +969,24 @@ void loop () {
         }
       }
     }
+    
+  //pkj
+  if (types_Sta) {
+    types_Sta = false;
+    types_Time = millis();
+  }
+
+  if(millis() - types_Time < 2000){
+    if (types_Code == 1 ) {
+      go_disarm();
+    }
+    else if (types_Code == 2) {
+      go_arm();    
+    }
+  }
+  else
+      types_Code = 0;
+    
 #if defined(LED_FLASHER)
     led_flasher_autoselect_sequence();
 #endif
