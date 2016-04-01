@@ -152,15 +152,15 @@ void LoadDefaults() {
     // do that at the last possible moment, so we can override virtually all defaults and constants
   #else
     #if PID_CONTROLLER == 1
-      conf.pid[ROLL].P8     = 33;  conf.pid[ROLL].I8    = 30; conf.pid[ROLL].D8     = 23;
-      conf.pid[PITCH].P8    = 33; conf.pid[PITCH].I8    = 30; conf.pid[PITCH].D8    = 23;
-      conf.pid[PIDLEVEL].P8 = 90; conf.pid[PIDLEVEL].I8 = 10; conf.pid[PIDLEVEL].D8 = 100;
+      conf.pid[ROLL].P8     = 51;  conf.pid[ROLL].I8    = 30; conf.pid[ROLL].D8     = 23;
+      conf.pid[PITCH].P8    = 51; conf.pid[PITCH].I8    = 30; conf.pid[PITCH].D8    = 23;
+      conf.pid[PIDLEVEL].P8 = 111; conf.pid[PIDLEVEL].I8 = 30; conf.pid[PIDLEVEL].D8 = 100;
     #elif PID_CONTROLLER == 2
       conf.pid[ROLL].P8     = 28;  conf.pid[ROLL].I8    = 10; conf.pid[ROLL].D8     = 7;
       conf.pid[PITCH].P8    = 28; conf.pid[PITCH].I8    = 10; conf.pid[PITCH].D8    = 7;
       conf.pid[PIDLEVEL].P8 = 30; conf.pid[PIDLEVEL].I8 = 32; conf.pid[PIDLEVEL].D8 = 0;
     #endif
-    conf.pid[YAW].P8      = 68;  conf.pid[YAW].I8     = 45;  conf.pid[YAW].D8     = 0;
+    conf.pid[YAW].P8      = 85;  conf.pid[YAW].I8     = 45;  conf.pid[YAW].D8     = 0;
     conf.pid[PIDALT].P8   = 64; conf.pid[PIDALT].I8   = 25; conf.pid[PIDALT].D8   = 24;
 
     conf.pid[PIDPOS].P8  = POSHOLD_P * 100;     conf.pid[PIDPOS].I8    = POSHOLD_I * 100;       conf.pid[PIDPOS].D8    = 0;

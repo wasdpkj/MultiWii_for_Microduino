@@ -757,6 +757,9 @@ void setup() {
   #ifdef DEBUGMSG
     debugmsg_append_str("initialization completed\n");
   #endif
+
+  calibratingA = 512;
+  conf.activate[BOXANGLE]=0B111;
 }
 
 void go_arm() {
