@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
-<comment>Fri Sep 25 11:41:40 CST 2015</comment>
+<comment>Mon Jul 04 19:46:52 CST 2016</comment>
 <entry key="power.trigger">0</entry>
 <entry key="pid.3.d">24.0</entry>
 <entry key="pid.2.i">0.045</entry>
-<entry key="pid.1.p">5.0</entry>
+<entry key="pid.1.p">5.1</entry>
 <entry key="rc.yaw.rate">0.0</entry>
 <entry key="pid.2.d">0.0</entry>
 <entry key="pid.9.p">0.0</entry>
@@ -18,12 +18,12 @@
 <entry key="pid.9.d">0.0</entry>
 <entry key="pid.0.d">23.0</entry>
 <entry key="pid.8.i">0.0</entry>
-<entry key="pid.7.p">15.199999</entry>
+<entry key="pid.7.p">11.1</entry>
 <entry key="pid.8.d">0.0</entry>
-<entry key="rc.rate">0.6</entry>
-<entry key="rc.throttle.mid">0.5</entry>
+<entry key="rc.rate">0.9</entry>
+<entry key="rc.throttle.mid">0.43</entry>
 <entry key="rc.rollpitch.rate">0.0</entry>
-<entry key="pid.7.i">0.045</entry>
+<entry key="pid.7.i">0.03</entry>
 <entry key="pid.6.p">1.4</entry>
 <entry key="pid.7.d">100.0</entry>
 <entry key="pid.6.i">0.2</entry>
@@ -38,6 +38,6 @@
 <entry key="pid.3.p">6.4</entry>
 <entry key="pid.4.d">0.0</entry>
 <entry key="pid.3.i">0.025</entry>
-<entry key="rc.throttle.expo">0.0</entry>
+<entry key="rc.throttle.expo">0.72</entry>
 <entry key="pid.2.p">8.5</entry>
 </properties>
