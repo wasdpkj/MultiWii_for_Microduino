@@ -160,7 +160,7 @@ void LoadDefaults() {
 
     conf.pid[PIDVEL].P8 = 0;      conf.pid[PIDVEL].I8 = 0;    conf.pid[PIDVEL].D8 = 0;
 
-    conf.rcRate8 = 90; conf.rcExpo8 = 65;
+    conf.rcRate8 = 80; conf.rcExpo8 = 65;
     conf.rollPitchRate = 0;
     conf.yawRate = 0;
     conf.dynThrPID = 0;

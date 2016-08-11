@@ -702,7 +702,7 @@ void setup() {
 
   calibratingA = 512;
 
-  conf.activate[BOXARM]=0B110;
+//  conf.activate[BOXARM]=0B110;
   conf.activate[BOXANGLE]=0B111;
 //    rcOptions[BOXANGLE]=1;
 //  rcOptions[BOXANGLE]=1;
