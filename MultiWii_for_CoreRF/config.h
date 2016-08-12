@@ -1,6 +1,10 @@
 #ifndef CONFIG_H_
 #define CONFIG_H_
 
+#define MICRODUINO_AUTO_CALIBRATING //免上位机配置，开机自动校正陀螺仪
+#define MICRODUINO_AUTO_ANGLE //免上位机配置，开启自稳功能
+//#define MICRODUINO_AUTO_ARM //免上位机配置，AUX1通道一键解锁，此时传统解锁方法失效
+
 /*************************************************************************************************/
 /****           CONFIGURABLE PARAMETERS                                                       ****/
 /*************************************************************************************************/

@@ -700,10 +700,17 @@ void setup() {
 
   debugmsg_append_str("initialization completed\n");
 
+#ifdef MICRODUINO_AUTO_CALIBRATING
   calibratingA = 512;
+#endif
 
-//  conf.activate[BOXARM]=0B110;
+#ifdef MICRODUINO_AUTO_ARM
+  conf.activate[BOXARM]=0B110;
+#endif
+
+#ifdef MICRODUINO_AUTO_ANGLE
   conf.activate[BOXANGLE]=0B111;
+#endif
 //    rcOptions[BOXANGLE]=1;
 //  rcOptions[BOXANGLE]=1;
 //  // bumpless transfer to Level mode
